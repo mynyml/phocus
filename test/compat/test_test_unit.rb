@@ -1,6 +1,13 @@
 require 'test/test_helper'
 require 'lib/phocus/test_unit'
 
+class Test::Unit::TestCase
+  def setup
+    reset_phocused_classes(TestTestUnitA, TestTestUnitB, TestTestUnitC)
+    Phocus.method_pattern = /^test_/
+  end
+end
+
 # should focus a method
 class TestTestUnitA < Test::Unit::TestCase
   def test_foo
@@ -37,5 +44,6 @@ end
 # should not complain when no methods are left after focusing
 class TestTestUnitC < Test::Unit::TestCase
   def test_xyz
+    flunk "not focused"
   end
 end
