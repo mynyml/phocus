@@ -23,6 +23,24 @@ Expectations do
     TestA.respond_to?(:phocus)
   end
 
+  ## pattern
+
+  # custom pattern for relevant methods.
+  # all other methods will be ignored by Phocus
+  # (i.e. they cannot be focused, nor will they ever be removed)
+  expect %w( test_baz test:bar) do
+    reset
+    Phocus.method_pattern = /^test:/
+    class TestA
+      define_method(:'test:foo') {}
+      focus
+      define_method(:'test:bar') {}
+      define_method(:'test_baz') {}
+    end
+
+    TestA.instance_methods(false)
+  end
+
   ## focused tests
 
   # only keeps focused method

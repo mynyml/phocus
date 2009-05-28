@@ -1,5 +1,10 @@
 module Phocus
+  class << self
+    attr_accessor :method_pattern
+  end
+
   def self.included(base)
+    self.method_pattern = /^test_/
     base.extend ClassMethods
   end
 
@@ -20,7 +25,8 @@ module Phocus
 
     def method_added(name)
       super
-      if name.to_s.match(/^test_/)
+      #if name.to_s.match(/^test/)
+      if name.to_s.match(Phocus.method_pattern)
         if @@__focused
           @@__focus_next ? @@__focus_next = false : remove_method(name)
         else
