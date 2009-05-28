@@ -1,5 +1,6 @@
 require 'test/test_helper'
 require 'expectations'
+require 'lib/phocus'
 
 class TestCase
   include Phocus

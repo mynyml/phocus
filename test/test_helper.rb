@@ -6,9 +6,6 @@ begin
 rescue LoadError, RuntimeError
 end
 
-root = Pathname(__FILE__).dirname.parent.expand_path
-require root.join('lib/phocus')
-
 class Object
   def self.metaclass
     (class << self; self; end)
