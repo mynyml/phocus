@@ -1,0 +1,8 @@
+o test (implement?) compatibility with test/unit plugins
+  - context, shoulda, test/spec, contess, etc.
+
+o handle errors when a TestCase doesn't define any test method
+  `def default_test() end` works, but test count should not go up
+
+o add docs
+  - rdocs, README
