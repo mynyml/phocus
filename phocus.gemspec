@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: phocus
 version: !ruby/object:Gem::Version 
-  version: "0.9"
+  version: 0.9.4
 platform: ruby
 authors: 
 - Martin Aumont
@@ -26,9 +26,9 @@ files:
 - test
 - test/test_phocus.rb
 - test/compat
-- test/compat/test_contess.rb
 - test/compat/test_shoulda.rb
 - test/compat/test_context.rb
+- test/compat/test_contest.rb
 - test/compat/test_test_unit.rb
 - test/compat/test_minitest.rb
 - test/README
@@ -37,8 +37,8 @@ files:
 - lib
 - lib/phocus
 - lib/phocus/context.rb
-- lib/phocus/contess.rb
 - lib/phocus/shoulda.rb
+- lib/phocus/contest.rb
 - lib/phocus/minitest.rb
 - lib/phocus/test_unit.rb
 - lib/phocus.rb
