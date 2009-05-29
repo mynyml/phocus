@@ -4,7 +4,6 @@ require 'lib/phocus/test_unit'
 class Test::Unit::TestCase
   def setup
     reset_phocused_classes(TestTestUnitA, TestTestUnitB, TestTestUnitC)
-    Phocus.method_pattern = /^test_/
   end
 end
 

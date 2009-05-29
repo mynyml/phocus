@@ -12,3 +12,5 @@ class Test::Unit::TestCase
   def default_test
   end
 end
+
+Phocus.method_pattern = /^test_/
