@@ -33,6 +33,16 @@ spec = Gem::Specification.new do |s|
   s.files           = all_except([/doc/, /pkg/])
 end
 
+desc "Generate rdoc documentation."
+Rake::RDocTask.new("rdoc") { |rdoc|
+  rdoc.rdoc_dir = 'doc/rdoc'
+  rdoc.title    = "Phocus"
+  rdoc.options << '--line-numbers' << '--inline-source'
+  rdoc.options << '--charset' << 'utf-8'
+  rdoc.rdoc_files.include('README')
+  rdoc.rdoc_files.include('lib/**/*.rb')
+}
+
 Rake::GemPackageTask.new(spec) do |p|
   p.gem_spec = spec
 end
@@ -54,13 +64,3 @@ desc "Uninstall gem"
 task :uninstall => :clean do
   sh "#{SUDO} #{gem} uninstall -v #{spec.version} -x #{spec.name}"
 end
-
-desc "Generate rdoc documentation."
-Rake::RDocTask.new("rdoc") { |rdoc|
-  rdoc.rdoc_dir = 'doc/rdoc'
-  rdoc.title    = "Simple Router - Document"
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.options << '--charset' << 'utf-8'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
-}

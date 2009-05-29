@@ -4,14 +4,18 @@ require 'test/unit'
 root  = Pathname(__FILE__).dirname.parent.parent.expand_path
 require root + 'lib/phocus'
 
-class Test::Unit::TestCase
-  include ::Phocus
+module Test #:nodoc: all
+  class Unit::TestCase
+    include ::Phocus
+  end
 end
 
-class Test::Unit::TestSuite
-  # TODO only override when @@__focused
-  def empty?
-    false
+module Test #:nodoc: all
+  class Unit::TestSuite
+    # TODO only override when @@__focused
+    def empty?
+      false
+    end
   end
 end
 
