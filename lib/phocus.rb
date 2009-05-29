@@ -1,10 +1,13 @@
 module Phocus
   class << self
     attr_accessor :method_pattern
+
+    def method_pattern
+      @method_pattern || /^test_/
+    end
   end
 
   def self.included(base)
-    self.method_pattern = /^test_/
     base.extend ClassMethods
   end
 
