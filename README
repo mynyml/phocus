@@ -1,0 +1,88 @@
+==== Intro
+
+Phocus let's you temporarily focus some tests, ignoring all others, even across test classes.
+
+==== Examples
+
+  require 'test/unit'
+  require 'phocus/test_unit'
+
+  class TestUser < Test::Unit::TestCase
+
+    focus
+    def test_foo
+      assert User.authenticate('...')
+    end
+
+    def test_bar
+      assert User.do_something_else
+    end
+  end
+
+  class TestAcmeWidget < Test::Unit::TestCase
+
+    def test_abc
+      assert true
+    end
+
+    focus
+    def test_xyz
+      assert true
+    end
+  end
+
+Executing these tests (say with <tt>rake test</tt> or <tt>autotest</tt>), will
+only run <tt>test_foo</tt> and <tt>test_xyz</tt>.
+
+==== Phocus Vs. Editor
+
+"Dude, MY editor already does that! Just get a real editor!!1!"
+
+Actually, so does my editor. But I've found that in many situations, it was far
+from enough.
+
+Contexts:
+Some frameworks like shoulda, context and contest allow you to embed tests
+within context blocks, which usually throws off the editor's "run a sinlge
+test" funtionality, since they expand the test method names.
+
+Debugging:
+Some editors will even allow you to step into the code when using
+<tt>debugger</tt> within that single test, but it's usually not as convenient
+as the console.
+
+Multiple Tests:
+Phocus allows focusing more than one tests.
+
+==== Other Testing Frameworks
+
+Phocus is compatible with other testing frameworks. To use with your framework
+of choice, simply require the right compatibility file:
+
+  require 'phocus/test_unit'
+  require 'phocus/minitest'
+  require 'phocus/shoulda'
+  require 'phocus/context'
+  require 'phocus/contest'
+
+It is likely to be compatible with other frameworks as well, but these are the
+ones that have been verified to work and that are automatically set up.
+
+In case you're wondering,
+
+  require 'phocus'
+
+is the standalone phocus functionality. You can require it directly, but you'll
+have to set it up (which pretty much just means setting the right
+Phocus.method_pattern for your test framework and including the mixin). You
+really don't need to bother though, that work has been taken care of for you if
+you <tt>require 'phocus/...'</tt> directly. Though it will be useful if you're
+trying to get Phocus working with another framework. Refer to the rdocs in this
+case (or better yet, you can read the source; it's < 50 LOCs)
+
+==== Links
+source:: http://github.com/mynyml/phocus
+rdocs::  http://docs.github.com/mynyml/phocus
+
+==== License
+MIT. See LICENSE file.
