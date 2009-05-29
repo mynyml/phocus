@@ -43,8 +43,8 @@ from enough.
 
 Contexts:
 Some frameworks like shoulda, context and contest allow you to embed tests
-within context blocks, which usually throws off the editor's "run a sinlge
-test" funtionality, since they expand the test method names.
+within context blocks, which throws off the editor's "run a single test"
+funtionality, since they expand the test method names.
 
 Debugging:
 Some editors will even allow you to step into the code when using
@@ -56,8 +56,8 @@ Phocus allows focusing more than one tests.
 
 ==== Other Testing Frameworks
 
-Phocus is compatible with other testing frameworks. To use with your framework
-of choice, simply require the right compatibility file:
+Phocus is compatible with various testing frameworks. To use with your
+framework of choice, simply require the right compatibility file:
 
   require 'phocus/test_unit'
   require 'phocus/minitest'
