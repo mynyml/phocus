@@ -22,7 +22,7 @@ end
 
 spec = Gem::Specification.new do |s|
   s.name            = 'phocus'
-  s.version         = '0.5'
+  s.version         = '0.9'
   s.summary         = "Run focused tests on test/unit."
   s.description     = "Tell test/unit exactly which tests you want run. It will ignore all the other ones and let you concentrate on a few."
   s.author          = "Martin Aumont"
