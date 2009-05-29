@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: phocus
 version: !ruby/object:Gem::Version 
-  version: 0.9.4
+  version: 0.9.8
 platform: ruby
 authors: 
 - Martin Aumont
@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-05-28 00:00:00 -04:00
+date: 2009-05-29 00:00:00 -04:00
 default_executable: 
 dependencies: []
 
@@ -43,6 +43,7 @@ files:
 - lib/phocus/test_unit.rb
 - lib/phocus.rb
 - phocus.gemspec
+- LICENSE
 - README
 has_rdoc: true
 homepage: ""
