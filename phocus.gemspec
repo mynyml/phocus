@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: phocus
 version: !ruby/object:Gem::Version 
-  version: "0.5"
+  version: "0.9"
 platform: ruby
 authors: 
 - Martin Aumont
@@ -25,10 +25,24 @@ files:
 - Rakefile
 - test
 - test/test_phocus.rb
+- test/compat
+- test/compat/test_contess.rb
+- test/compat/test_shoulda.rb
+- test/compat/test_context.rb
+- test/compat/test_test_unit.rb
+- test/compat/test_minitest.rb
+- test/README
 - test/test_helper.rb
 - TODO
 - lib
+- lib/phocus
+- lib/phocus/context.rb
+- lib/phocus/contess.rb
+- lib/phocus/shoulda.rb
+- lib/phocus/minitest.rb
+- lib/phocus/test_unit.rb
 - lib/phocus.rb
+- phocus.gemspec
 - README
 has_rdoc: true
 homepage: ""
