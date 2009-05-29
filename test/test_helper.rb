@@ -19,9 +19,6 @@ def reset_phocused_classes(*classes)
       class_variable_set(:@@__focus_next, false )
       class_variable_set(:@@__test_methods,  {} )
     end
-    klass.class_eval do
-      instance_methods(false).each {|name| remove_method(name) if respond_to?(name) }
-    end
   end
   reset_phocus
 end

@@ -9,7 +9,13 @@ class TestA < TestCase; end
 class TestB < TestCase; end
 
 def reset
-  reset_phocused_classes(TestA, TestB)
+  klasses = [TestA, TestB]
+  reset_phocused_classes(*klasses)
+  klasses.each do |klass|
+    klass.class_eval do
+      instance_methods(false).each {|name| remove_method(name) }
+    end
+  end
 end
 
 Expectations do
@@ -28,7 +34,7 @@ Expectations do
   # custom pattern for relevant methods.
   # all other methods will be ignored by Phocus
   # (i.e. they cannot be focused, nor will they ever be removed)
-  expect %w( test_baz test:bar) do
+  expect %w( test_baz test:bar).to_set do
     reset
     Phocus.method_pattern = /^test:/
     class TestA
@@ -38,13 +44,13 @@ Expectations do
       define_method(:'test_baz') {}
     end
 
-    TestA.instance_methods(false)
+    TestA.instance_methods(false).to_set
   end
 
   ## focused tests
 
   # only keeps focused method
-  expect %w( test_foo ) do
+  expect %w( test_foo ).to_set do
     reset
     class TestA
       focus
@@ -52,7 +58,7 @@ Expectations do
       def test_bar() end
     end
 
-    TestA.instance_methods(false)
+    TestA.instance_methods(false).to_set
   end
 
   # keeps more than one focused methods

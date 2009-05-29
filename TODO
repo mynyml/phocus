@@ -6,3 +6,10 @@ o handle errors when a TestCase doesn't define any test method
 
 o add docs
   - rdocs, README
+
+o focus do
+    ...
+    ...
+  end
+
+  to focus a group of tests at once
