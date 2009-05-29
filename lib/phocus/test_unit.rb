@@ -6,10 +6,12 @@ require root + 'lib/phocus'
 
 class Test::Unit::TestCase
   include ::Phocus
+end
 
-  # TODO prevent test count from going up
+class Test::Unit::TestSuite
   # TODO only override when @@__focused
-  def default_test
+  def empty?
+    false
   end
 end
 
