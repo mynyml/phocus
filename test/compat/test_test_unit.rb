@@ -4,6 +4,7 @@ require 'lib/phocus/test_unit'
 class Test::Unit::TestCase
   def setup
     reset_phocused_classes(TestTestUnitA, TestTestUnitB, TestTestUnitC)
+    reset_phocus
   end
 end
 

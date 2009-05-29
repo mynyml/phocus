@@ -16,6 +16,7 @@ def reset
       instance_methods(false).each {|name| remove_method(name) }
     end
   end
+  reset_phocus
 end
 
 Expectations do

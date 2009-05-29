@@ -20,9 +20,8 @@ def reset_phocused_classes(*classes)
       class_variable_set(:@@__test_methods,  {} )
     end
   end
-  reset_phocus
 end
 
 def reset_phocus
-  Phocus.method_pattern = /^test_/
+  Phocus.method_pattern = nil
 end
