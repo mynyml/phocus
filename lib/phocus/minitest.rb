@@ -1,5 +1,4 @@
 require 'pathname'
-require 'rubygems' unless RUBY_VERSION >= '1.9.1'
 require 'minitest/unit'
 
 root  = Pathname(__FILE__).dirname.parent.parent.expand_path
