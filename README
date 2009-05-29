@@ -34,6 +34,13 @@ Phocus let's you temporarily focus some tests, ignoring all others, even across 
 Executing these tests (say with <tt>rake test</tt> or <tt>autotest</tt>), will
 only run <tt>test_foo</tt> and <tt>test_xyz</tt>.
 
+Also works fine with <tt>test "description"</tt> style tests.
+
+    focus
+    test "abc" do
+      assert true
+    end
+
 ==== Phocus Vs. Editor
 
 "Dude, MY editor already does that! Just get a real editor!!1!"
