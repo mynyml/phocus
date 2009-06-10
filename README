@@ -2,10 +2,19 @@
 
 Phocus let's you temporarily focus some tests, ignoring all others, even across test classes.
 
+===== Features
+
+* Ultra simple to use
+* Works accross testcase classes
+* Works within contexts
+* Can focus multiple tests
+* Simple code (< 50 LOCs)
+* Compatible with at least 5 different testing frameworks
+
 ==== Examples
 
   require 'test/unit'
-  require 'phocus/test_unit'
+  require 'phocus'
 
   class TestUser < Test::Unit::TestCase
 
@@ -43,7 +52,7 @@ Also works fine with <tt>test "description"</tt> style tests.
 
 ==== Phocus Vs. Editor
 
-"Dude, MY editor already does that! Just get a real editor!!1!"
+"Dude, MY editor already does that! Just get a real editor!!"
 
 Actually, so does my editor. But I've found that in many situations, it was far
 from enough.
@@ -51,7 +60,7 @@ from enough.
 Contexts:
 Some frameworks like shoulda, context and contest allow you to embed tests
 within context blocks, which throws off the editor's "run a single test"
-funtionality, since they expand the test method names.
+functionality, since they expand the test method names.
 
 Debugging:
 Some editors will even allow you to step into the code when using
@@ -61,33 +70,22 @@ as the console.
 Multiple Tests:
 Phocus allows focusing more than one tests.
 
-==== Other Testing Frameworks
+==== Testing Framework Compatibility
 
-Phocus is compatible with various testing frameworks. To use with your
-framework of choice, simply require the right compatibility file:
+Phocus is known to be compatible with the following testing frameworks (see test/compat/*):
 
-  require 'phocus/test_unit'
-  require 'phocus/minitest'
-  require 'phocus/shoulda'
-  require 'phocus/context'
-  require 'phocus/contest'
+  * test/unit
+  * minitest/unit
+  * shoulda
+  * context
+  * contest
 
-It is likely to be compatible with other frameworks as well, but these are the
-ones that have been verified to work and that are automatically set up.
-
-In case you're wondering,
-
-  require 'phocus'
-
-is the standalone phocus functionality. You can require it directly, but you'll
-have to set it up (which pretty much just means setting the right
-Phocus.method_pattern for your test framework and including the mixin). You
-really don't need to bother though, that work has been taken care of for you if
-you <tt>require 'phocus/...'</tt> directly. Though it will be useful if you're
-trying to get Phocus working with another framework. Refer to the rdocs in this
-case (or better yet, you can read the source; it's < 50 LOCs)
+It is possibly compatible out of the box with other test/unit-based testing
+frameworks as well, but it should be fairly easy to set up if it isn't (include
+Phocus in parent testcase class and set proper method_pattern. See rdocs)
 
 ==== Links
+
 source:: http://github.com/mynyml/phocus
 rdocs::  http://docs.github.com/mynyml/phocus
 
