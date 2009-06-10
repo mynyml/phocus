@@ -66,7 +66,7 @@ task :uninstall => :clean do
 end
 
 desc "run framework compatibility tests"
-task :test do
+task :test_all do
   paths = %w(
     test/compat/test_contest.rb
     test/compat/test_context.rb
