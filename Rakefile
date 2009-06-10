@@ -64,3 +64,16 @@ desc "Uninstall gem"
 task :uninstall => :clean do
   sh "#{SUDO} #{gem} uninstall -v #{spec.version} -x #{spec.name}"
 end
+
+desc "run framework compatibility tests"
+task :test do
+  paths = %w(
+    test/compat/test_contest.rb
+    test/compat/test_context.rb
+    test/compat/test_minitest.rb
+    test/compat/test_shoulda.rb
+    test/compat/test_test_unit.rb
+    test/test_phocus.rb
+  )
+  paths.each {|path| system("ruby #{path}") }
+end

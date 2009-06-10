@@ -4,3 +4,5 @@ Each test file uses it's own framework, so they must be run individually.
   ruby test/compat/test_test_unit.rb
   ruby test/compat/test_context.rb
   ...
+
+<tt>rake test</tt> will do just that.
