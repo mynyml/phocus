@@ -1,5 +1,6 @@
 require 'test/test_helper'
-require 'lib/phocus/minitest'
+require 'minitest/autorun'
+require 'lib/phocus'
 
 class MiniTest::Unit::TestCase
   def setup

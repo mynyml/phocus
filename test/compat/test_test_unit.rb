@@ -1,5 +1,6 @@
 require 'test/test_helper'
-require 'lib/phocus/test_unit'
+require 'test/unit'
+require 'lib/phocus'
 
 class Test::Unit::TestCase
   def setup

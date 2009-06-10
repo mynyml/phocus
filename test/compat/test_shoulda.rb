@@ -1,5 +1,9 @@
 require 'test/test_helper'
-require 'lib/phocus/shoulda' # testing shoulda/test_unit
+require 'test/unit'
+require 'shoulda'
+require 'lib/phocus'
+
+# testing shoulda/test_unit
 
 class Test::Unit::TestCase
   def setup

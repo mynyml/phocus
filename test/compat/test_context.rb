@@ -1,5 +1,6 @@
 require 'test/test_helper'
-require 'lib/phocus/context'
+require 'context'
+require 'lib/phocus'
 
 # should focus a method
 class TestContextA < Test::Unit::TestCase

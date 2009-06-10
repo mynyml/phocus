@@ -1,3 +1,5 @@
+require 'pathname'
+
 # Phocus let's you single out selected methods out of a defined group of methods.
 #
 # It is intended to be used to focus one or more tests in a test suite,
@@ -93,7 +95,7 @@ module Phocus
     # If the method belongs to target group (method_pattern), then remove it
     # unless it is focused.
     #
-    # we don't want any methods removed if focus is never used, so until it is,
+    # We don't want any methods removed if focus is never used, so until it is,
     # keep a reference to methods being defined so that we can come back and
     # remove them later.
     #
@@ -117,3 +119,5 @@ module Phocus
       end
   end
 end
+
+require Pathname(__FILE__).dirname.expand_path + 'phocus/autodetect'

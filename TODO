@@ -7,7 +7,7 @@ o test (implement?) compatibility with test/unit plugins
   o test/spec
     ...
 
-o add docs
+x add docs
   - rdocs, README
 
 o focus do
@@ -16,3 +16,5 @@ o focus do
   end
 
   to focus a group of tests at once
+
+x autodetect test framework; simply use `require 'phocus'`
