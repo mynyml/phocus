@@ -16,6 +16,7 @@ Phocus let's you temporarily focus some tests, ignoring all others, even across 
 ==== Examples
 
   require 'test/unit'
+  require 'rubygems'
   require 'phocus'
 
   class TestUser < Test::Unit::TestCase
