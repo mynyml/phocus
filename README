@@ -1,15 +1,17 @@
-==== Intro
+==== Summary
 
 Phocus let's you temporarily focus some tests, ignoring all others, even across test classes.
 
-===== Features
+
+==== Features
 
 * Ultra simple to use
 * Works accross testcase classes
 * Works within contexts
 * Can focus multiple tests
 * Simple code (< 50 LOCs)
-* Compatible with at least 5 different testing frameworks
+* Compatible with various testing frameworks
+
 
 ==== Examples
 
@@ -20,7 +22,7 @@ Phocus let's you temporarily focus some tests, ignoring all others, even across 
 
     focus
     def test_foo
-      assert User.authenticate('...')
+      assert User.do_something
     end
 
     def test_bar
@@ -50,25 +52,6 @@ Also works fine with <tt>test "description"</tt> style tests.
       assert true
     end
 
-==== Phocus Vs. Editor
-
-"Dude, MY editor already does that! Just get a real editor!!"
-
-Actually, so does my editor. But I've found that in many situations, it was far
-from enough.
-
-Contexts:
-Some frameworks like shoulda, context and contest allow you to embed tests
-within context blocks, which throws off the editor's "run a single test"
-functionality, since they expand the test method names.
-
-Debugging:
-Some editors will even allow you to step into the code when using
-<tt>debugger</tt> within that single test, but it's usually not as convenient
-as the console.
-
-Multiple Tests:
-Phocus allows focusing more than one tests.
 
 ==== Testing Framework Compatibility
 
@@ -84,10 +67,12 @@ It is possibly compatible out of the box with other test/unit-based testing
 frameworks as well, but it should be fairly easy to set up if it isn't (include
 Phocus in parent testcase class and set proper method_pattern. See rdocs)
 
+
 ==== Links
 
 source:: http://github.com/mynyml/phocus
 rdocs::  http://docs.github.com/mynyml/phocus
+
 
 ==== License
 MIT. See LICENSE file.

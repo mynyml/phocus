@@ -1,20 +1,17 @@
-o test (implement?) compatibility with test/unit plugins
-  x test/unit
-  x minitest
-  x context
-  x shoulda
-  x contest
-  o test/spec
+o compatibility
+  o with test/unit plugins
+    x test/unit
+    x minitest
+    x context
+    x shoulda
+    x contest
+    o test/spec
     ...
+  o Rails
 
-x add docs
-  - rdocs, README
+o focus a group of tests at once
 
-o focus do
-    ...
-    ...
-  end
-
-  to focus a group of tests at once
-
-x autodetect test framework; simply use `require 'phocus'`
+    focus do
+      ...
+      ...
+    end
