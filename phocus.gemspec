@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: phocus
 version: !ruby/object:Gem::Version 
-  version: 0.9.9
+  version: "1.0"
 platform: ruby
 authors: 
 - Martin Aumont
@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-06-10 00:00:00 -04:00
+date: 2009-06-11 00:00:00 -04:00
 default_executable: 
 dependencies: []
 
