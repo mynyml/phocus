@@ -1,3 +1,5 @@
+o make ruby 1.9 compatible
+
 o compatibility
   o with test/unit plugins
     x test/unit
@@ -9,7 +11,7 @@ o compatibility
     ...
   o Rails
 
-o focus a group of tests at once
+o focus a group of tests at once?
 
     focus do
       ...
