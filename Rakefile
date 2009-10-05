@@ -22,6 +22,7 @@ def gemspec
     s.add_development_dependency 'thoughtbot-shoulda'
     s.add_development_dependency 'citrusbyte-contest'
     s.add_development_dependency 'jeremymcanally-context'
+    s.add_development_dependency 'expectations'
   end
 end
 
