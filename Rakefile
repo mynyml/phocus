@@ -5,7 +5,7 @@ require 'rake/rdoctask'
 # Gem
 # --------------------------------------------------
 def gemspec
-  Gem::Specification.new do |s|
+  @gemspec ||= Gem::Specification.new do |s|
     s.name                = "phocus"
     s.summary             = "Run focused tests on test/unit."
     s.description         = "Tell test/unit exactly which tests you want run. It will ignore all the other ones and let you concentrate on a few."
@@ -30,6 +30,11 @@ desc "Create a Ruby GEM package with the given name and version."
 task(:gem) do
   file = Gem::Builder.new(gemspec).build
   FileUtils.mv file, "pkg/#{file}", :verbose => true
+end
+
+desc "Create gemspec file"
+task(:gemspec) do
+  open("#{gemspec.name}.gemspec", 'w') {|f| f << YAML.dump(gemspec) }
 end
 
 # --------------------------------------------------
