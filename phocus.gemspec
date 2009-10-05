@@ -78,6 +78,7 @@ files:
 - Rakefile
 - TODO
 - VERSION
+- gem.watchr
 - lib/phocus.rb
 - lib/phocus/autodetect.rb
 - phocus.gemspec
