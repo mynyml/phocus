@@ -7,7 +7,6 @@ TODO
 VERSION
 lib/phocus.rb
 lib/phocus/autodetect.rb
-phocus.gemspec
 test/README
 test/compat/test_contest.rb
 test/compat/test_context.rb
