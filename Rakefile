@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'rake/rdoctask'
 
 # --------------------------------------------------
@@ -7,7 +6,7 @@ require 'rake/rdoctask'
 def gemspec
   @gemspec ||= Gem::Specification.new do |s|
     s.name                = "phocus"
-    s.summary             = "Run focused tests on test/unit."
+    s.summary             = "Run focused tests"
     s.description         = "Tell test/unit exactly which tests you want run. It will ignore all the other ones and let you concentrate on a few."
     s.author              = "Martin Aumont"
     s.email               = "mynyml@gmail.com"
@@ -15,7 +14,7 @@ def gemspec
     s.rubyforge_project   = "phocus"
     s.has_rdoc            =  true
     s.require_path        = "lib"
-    s.version             =  File.read("VERSION" ).strip
+    s.version             = "1.1"
     s.files               =  File.read("Manifest").strip.split("\n")
 
     s.add_development_dependency 'nanotest'

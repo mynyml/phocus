@@ -4,7 +4,6 @@ Manifest
 README
 Rakefile
 TODO
-VERSION
 gem.watchr
 lib/phocus.rb
 lib/phocus/autodetect.rb
