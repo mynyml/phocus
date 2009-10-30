@@ -18,9 +18,10 @@ end
 # --------------------------------------------------
 # Watchr Rules
 # --------------------------------------------------
-watch( '^test.*/test_.*\.rb'   )  { |m| run( "ruby -rubygems %s" % m[0] ) }
-watch( '^lib/phocus\.rb'       )  { |m| run( "ruby -rubygems %s" % m[0] ) }
-watch( '^test/test_helper\.rb' )  { run_all_tests }
+watch( '^test.*/test_.*\.rb'        )  { |m| run( "ruby -rubygems -Ilib %s"           % m[0] ) }
+watch( '^lib/phocus\.rb'            )  { |m| run( "ruby -rubygems -Ilib test/test_phocus.rb" ) }
+watch( '^lib/phocus/autodetect\.rb' )  { run_all_tests }
+watch( '^test/test_helper\.rb'      )  { run_all_tests }
 
 # --------------------------------------------------
 # Signal Handling
