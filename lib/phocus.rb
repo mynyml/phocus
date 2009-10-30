@@ -1,4 +1,3 @@
-require 'pathname'
 
 # Phocus let's you single out selected methods out of a defined group of methods.
 #
@@ -120,4 +119,5 @@ module Phocus
   end
 end
 
-require Pathname(__FILE__).dirname.expand_path + 'phocus/autodetect'
+require 'phocus/autodetect'
+
