@@ -2,6 +2,9 @@
 
 Phocus let's you temporarily focus some tests, ignoring all others, even across test classes.
 
+==== Install
+
+  gem install phocus --source http://gemcutter.org
 
 ==== Features
 
@@ -12,11 +15,9 @@ Phocus let's you temporarily focus some tests, ignoring all others, even across 
 * Simple code (< 50 LOCs)
 * Compatible with various testing frameworks
 
-
 ==== Examples
 
   require 'test/unit'
-  require 'rubygems'
   require 'phocus'
 
   class TestUser < Test::Unit::TestCase
@@ -43,16 +44,16 @@ Phocus let's you temporarily focus some tests, ignoring all others, even across 
     end
   end
 
-Executing these tests (say with <tt>rake test</tt> or <tt>autotest</tt>), will
-only run <tt>test_foo</tt> and <tt>test_xyz</tt>.
+Executing these tests (say with +rake test+ or +autotest+), will
+only run +test_foo+ and +test_xyz+.
 
-Also works fine with <tt>test "description"</tt> style tests.
+Also works fine with +test "description"+ style tests (or +it+,
+or +should+, ...).
 
     focus
     test "abc" do
       assert true
     end
-
 
 ==== Testing Framework Compatibility
 
@@ -68,12 +69,8 @@ It is possibly compatible out of the box with other test/unit-based testing
 frameworks as well, but it should be fairly easy to set up if it isn't (include
 Phocus in parent testcase class and set proper method_pattern. See rdocs)
 
-
 ==== Links
 
 source:: http://github.com/mynyml/phocus
 rdocs::  http://docs.github.com/mynyml/phocus
 
-
-==== License
-MIT. See LICENSE file.
