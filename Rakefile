@@ -53,20 +53,20 @@ namespace(:test) do
       test/test_phocus.rb
     )
     paths.each do |path|
-      cmd = "ruby -rubygems #{path}"
+      cmd = "ruby -rubygems -I.:lib #{path}"
       puts(cmd) if ENV['VERBOSE']
       system(cmd)
     end
   end
 
-  desc "Run all tests on multiple ruby versions (requires rvm with 1.8.6 and 1.8.7)"
+  desc "Run all tests on multiple ruby versions (requires rvm)"
   task(:portability) do
-    versions = %w(  1.8.6  1.8.7  1.9  )
+    versions = %w(  1.8.6  1.8.7  1.9  1.9.2  jruby  )
     versions.each do |version|
       system <<-BASH
         bash -c 'source ~/.rvm/scripts/rvm;
                  rvm use #{version};
-                 echo "--------- `ruby -v` ----------\n";
+                 echo "--------- #{version} ----------\n";
                  rake -s test:all'
       BASH
     end

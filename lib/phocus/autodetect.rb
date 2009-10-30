@@ -4,14 +4,13 @@
 # Somewhat hackish, but simple/straightforward. If there ever is a need for
 # extendability I'll gladly refactor.
 
-
 # --------------------------------------------------
 # test/unit, contest
 # --------------------------------------------------
 if defined?(Test::Unit::TestCase)
 
   Test::Unit::TestCase.class_eval { include ::Phocus }
-  Test::Unit::TestSuite.class_eval { def empty?() false end }
+  Test::Unit::TestSuite.class_eval { def empty?() false end } if defined?(Test::Unit::TestSuite)
   Phocus.method_pattern = /^test_/
 end
 
@@ -29,18 +28,13 @@ end
 # --------------------------------------------------
 if defined?(Test::Unit::TestCase) &&
             Test::Unit::TestCase.class_eval { class << self; self; end }.included_modules.map {|m| m.to_s }.include?('Context::Context')
-
-  Test::Unit::TestCase.class_eval { include ::Phocus }
   Phocus.method_pattern = /test:/
 end
 
 # --------------------------------------------------
 # shoulda (test/unit)
 # --------------------------------------------------
-if defined?(Test::Unit::TestCase) &&
-   defined?(Shoulda)
-
-  Test::Unit::TestCase.class_eval { include ::Phocus }
-  Test::Unit::TestSuite.class_eval { def empty?() false end }
+if defined?(Shoulda)
   Phocus.method_pattern = /^test:/
 end
+

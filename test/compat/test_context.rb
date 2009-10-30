@@ -1,3 +1,6 @@
+# context doesn't run under 1.9 (despite its tests passing)
+if RUBY_VERSION <= "1.8.7"
+
 require 'test/test_helper'
 require 'context'
 require 'lib/phocus'
@@ -40,3 +43,5 @@ class TestContextC < Test::Unit::TestCase
   test "xyz" do
   end
 end
+
+end #/if RUBY_VERSION
