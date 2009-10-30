@@ -1,14 +1,6 @@
-require 'pathname'
-require 'set'
 begin
   require 'ruby-debug'
 rescue LoadError, RuntimeError
-end
-
-class Object
-  def self.metaclass
-    (class << self; self; end)
-  end
 end
 
 def reset_phocused_classes(*classes)

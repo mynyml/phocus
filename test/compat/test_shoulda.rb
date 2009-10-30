@@ -3,15 +3,6 @@ require 'test/unit'
 require 'shoulda'
 require 'lib/phocus'
 
-# testing shoulda/test_unit
-
-class Test::Unit::TestCase
-  def setup
-    reset_phocused_classes(TestShouldaA, TestShouldaB, TestShouldaC)
-    reset_phocus
-  end
-end
-
 # should focus a method
 class TestShouldaA < Test::Unit::TestCase
   should "foo" do

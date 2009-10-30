@@ -2,13 +2,6 @@ require 'test/test_helper'
 require 'contest'
 require 'lib/phocus'
 
-class Test::Unit::TestCase
-  def setup
-    reset_phocused_classes(TestContestA, TestContestB, TestContestC)
-    reset_phocus
-  end
-end
-
 # should focus a method
 class TestContestA < Test::Unit::TestCase
   test "foo" do

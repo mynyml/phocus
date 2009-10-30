@@ -2,13 +2,6 @@ require 'test/test_helper'
 require 'minitest/autorun'
 require 'lib/phocus'
 
-class MiniTest::Unit::TestCase
-  def setup
-    reset_phocused_classes(TestMiniTestA, TestMiniTestB, TestMiniTestC)
-    reset_phocus
-  end
-end
-
 # should focus a method
 class TestMiniTestA < MiniTest::Unit::TestCase
   def test_foo
