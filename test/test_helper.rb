@@ -1,6 +1,5 @@
 require 'pathname'
 require 'set'
-require 'rubygems'
 begin
   require 'ruby-debug'
 rescue LoadError, RuntimeError

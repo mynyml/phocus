@@ -53,7 +53,7 @@ namespace(:test) do
       test/test_phocus.rb
     )
     paths.each do |path|
-      cmd = "ruby #{path}"
+      cmd = "ruby -rubygems #{path}"
       puts(cmd) if ENV['VERBOSE']
       system(cmd)
     end
