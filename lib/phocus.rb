@@ -99,7 +99,6 @@ module Phocus
     # remove them later.
     #
     def method_added(name) #:nodoc:
-      super
       if name.to_s.match(Phocus.method_pattern)
         if @@__focused
           @@__focus_next ? @@__focus_next = false : remove_method(name)

@@ -18,11 +18,11 @@ def gemspec
     s.version             =  File.read("VERSION" ).strip
     s.files               =  File.read("Manifest").strip.split("\n")
 
+    s.add_development_dependency 'nanotest'
     s.add_development_dependency 'minitest'
     s.add_development_dependency 'thoughtbot-shoulda'
     s.add_development_dependency 'citrusbyte-contest'
     s.add_development_dependency 'jeremymcanally-context'
-    s.add_development_dependency 'expectations'
   end
 end
 
