@@ -112,7 +112,7 @@ module Phocus
     private
       def clear_test_methods!
         @@__test_methods.each do |klass, method_names|
-          method_names.each {|name| klass.class_eval { remove_method(name) } }
+          method_names.each {|name| klass.class_eval { remove_method(name) rescue nil } }
         end
       end
   end
